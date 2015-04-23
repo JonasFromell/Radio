@@ -43,5 +43,10 @@ module.exports = function(environment) {
 
   }
 
+  // TODO: Change this to correct url
+  ENV.contentSecurityPolicy = {
+    'media-src': "'self' http://hpr.dogphilosophy.net"
+  };
+
   return ENV;
 };

@@ -1,0 +1,30 @@
+<nav>
+  <li>
+    <button>Previous</button>
+  </li>
+  <li>
+    <button {{action "toggle"}}>Play/Pause</button>
+  </li>
+  <li>
+    <button>Next</button>
+  </li>
+  <li>
+    Buffered
+    <progress max={{audio.duration}} value={{audio.buffered}}></progress>
+  </li>
+  <li>
+    Progress
+    <progress max={{audio.duration}} value={{audio.progress}}></progress>
+  </li>
+  <li>
+    {{track.duration}}
+  </li>
+  <li>
+    <button>Volume</button>
+    <ul>
+      <li>
+        <input type="range" />
+      </li>
+    </ul>
+  </li>
+</nav>
