@@ -45,6 +45,11 @@ export default Ember.Object.extend({
       this._timeUpdated(e);
     }.bind(this));
 
+    // TODO: Just for testing
+    context.addEventListener('volumechange', function (e) {
+      console.log('volume has changed', e);
+    });
+
     this.set('context', context);
   },
 
@@ -84,16 +89,32 @@ export default Ember.Object.extend({
   progress: 0,
 
   /**
+   * Volume of playback
+   *
+   * @prop { Number }
+   */
+  volume: 10,
+
+  /**
    * Observes changes to track and sets up the context to play it
    */
   trackObserver: Ember.observer('track', function () {
-    console.log('observer triggered');
-
     var track = this.get('track'),
         context = this.get('context');
 
     // Set source file on context
     context.src = track.url;
+  }),
+
+  /**
+   * Observes changes to volume amount
+   */
+  volumeObserver: Ember.observer('volume', function () {
+    var volume = this.get('volume'),
+        context = this.get('context');
+
+    // Set volume on context
+    context.volume = volume;
   }),
 
   /**

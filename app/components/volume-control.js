@@ -11,8 +11,12 @@ export default Ember.Component.extend({
   /**
    * Maximum value in range
    */
-  max: 100,
+  max: 1,
 
+  /**
+   * Steps in range
+   */
+  step: 0.1,
 
   /**
    * Current value in range
@@ -32,7 +36,8 @@ export default Ember.Component.extend({
   valueObserver: Ember.observer('value', function () {
     var value = this.get('value');
 
-    console.log(value);
+    // Change volume in audio service
+    this.set('audio.volume', value);
   }),
 
   /**
