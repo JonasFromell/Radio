@@ -1,0 +1,15 @@
+.AudioPlayer {
+  @include flex-container($direction: horizontal, $align: center);
+
+  background-color: color($grey, 100);
+
+  @include E(controls) {
+    @include flex-item($grow: 1);
+    @include flex-container($direction: horizontal, $justification: center, $align: center);
+  }
+
+  @include E(indicators) {
+    @include flex-item($grow: 3);
+    @include flex-container($align: center);
+  }
+}

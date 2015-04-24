@@ -1,0 +1,34 @@
+html, body {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+
+  height: 100%;
+
+  flex-direction: column;
+
+  @include E(header) {
+    flex: none;
+  }
+
+  @include E(content) {
+    width: 100%;
+
+    flex: 1 0 auto;
+
+    &::after {
+      display: block;
+      visibility: hidden;
+
+      height: 0px;
+
+      content: none;
+    }
+  }
+
+  @include E(footer) {
+    flex: none;
+  }
+}

@@ -125,21 +125,6 @@ export default Ember.Object.extend({
   },
 
   /**
-   * Pauses playback and clears player state
-   */
-  stop: function () {
-    var playing = this.get('playing'),
-        context = this.get('context');
-
-    if (playing) {
-      this.pause();
-    }
-
-    // Clear state
-    this._clear();
-  },
-
-  /**
    * Seeks to supplied time
    *
    * @param time { Number }
@@ -157,7 +142,7 @@ export default Ember.Object.extend({
         context = this.get('context');
 
     if (playing) {
-      this.stop();
+      this.pause();
     }
 
     this.play();
@@ -197,7 +182,10 @@ export default Ember.Object.extend({
    * Callback for `loadstart` event
    */
   _loadStarted: function (e) {
-    // Show a spinning wheel or somethin'
+    // Reset some states
+    this.set('duration', 0);
+    this.set('buffered', 0);
+    this.set('progress', 0);
   },
 
   /**
@@ -207,15 +195,5 @@ export default Ember.Object.extend({
     var context = this.get('context');
 
     this.set('progress', context.currentTime);
-  },
-
-  /**
-   * Clears the player state
-   */
-  _clear: function () {
-    this.set('duration', 0);
-    this.set('buffered', 0);
-    this.set('progress', 0);
   }
-
 });

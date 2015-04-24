@@ -1,0 +1,93 @@
+.Button {
+  position: relative;
+
+  display: inline-block;
+  overflow: hidden;
+
+  height: 36px;
+  min-width: 64px;
+  margin: 0 4px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 2px;
+
+  color: #000;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+
+  // TODO: Transitions
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    background-color: rgba(color($grey, 500), 0.20);
+  }
+
+  &:focus:not(:active) {
+    background-color: rgba(#000, 0.12);
+  }
+
+  &:active {
+    background-color: rgba(color($grey, 500), 0.40);
+  }
+
+  &[disabled] {
+    color: rgba(#000, 0.26);
+  }
+
+  &.button--colored {
+    color: color($theme, 500);
+
+    &:focus:not(:active) {
+      background-color: rgba(#000, 0.12);
+    }
+  }
+
+  @include M(colored) {
+    color: color($theme, 500);
+
+    &:focus:not(:active) {
+      background-color: rgba(#000, 0.12);
+    }
+  }
+
+  @include M(icon) {
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+
+    & .Icon {
+      position: absolute;
+      top: (32px - 24px) / 2;
+      left: (32px - 24px) / 2;
+    }
+
+    @include M(small) {
+      height: 24px;
+      width: 24px;
+      min-width: 24px;
+
+      & .Icon {
+        top: (24px - 24px) / 2;
+        left: (24px - 24px) / 2;
+      }
+    }
+
+    @include M(large) {
+      height: 48px;
+      width: 48px;
+      min-width: 48px;
+
+      & .Icon {
+        top: (48px - 24px) / 2;
+        left: (48px - 24px) / 2;
+      }
+    }
+  }
+}

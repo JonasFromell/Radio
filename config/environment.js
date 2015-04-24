@@ -45,7 +45,7 @@ module.exports = function(environment) {
 
   // TODO: Change this to correct url
   ENV.contentSecurityPolicy = {
-    'media-src': "'self' http://hpr.dogphilosophy.net"
+    'media-src': "'self' http://record.awdio.com:443"
   };
 
   return ENV;
