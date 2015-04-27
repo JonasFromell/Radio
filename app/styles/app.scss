@@ -18,10 +18,12 @@ $theme: $blue;
 
 // Base
 @import
-  "base/base";
+  "base/base",
+  "base/animation";
 
 // Components
 @import
   "components/button",
   "components/audio-player",
-  "components/progress-activity";
+  "components/progress-activity",
+  "components/volume-control";

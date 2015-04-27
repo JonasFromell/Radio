@@ -1,0 +1,85 @@
+/**
+ * TODO: Can't get this vertical in Chrome, no way to undo user-agent styling
+ */
+
+$track-background: rgba(#000, 0.26);
+$track-foreground: color($grey, 500);
+
+$thumb-foreground: $track-foreground;
+
+.VolumeControl {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  height: 18px;
+
+  @include E(range) {
+    -webkit-appearance: none;
+    z-index: 1; // Place thumb above track
+
+    height: 2px;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    align-self: center;
+
+    background: transparent;
+
+
+    /** Track **/
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+    }
+
+    /** Thumb **/
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+
+      box-sizing: border-box;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+
+      background: $thumb-foreground;
+    }
+  }
+
+  @include E(track) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 26px;
+    border: 0;
+    height: 2px;
+    width: calc(100% - 52px);
+
+    transform: translate(0, -1px);
+
+
+    @include M(lower) {
+      position: relative;
+
+      flex: 0; // Will be updated from JS
+      padding: 0;
+      border: 0;
+
+      background: $track-background;
+    }
+
+    @include M(upper) {
+      position: relative;
+
+      flex: 0; // Will be updated from JS
+      padding: 0;
+      border: 0;
+
+      background: $track-foreground;
+    }
+
+  }
+}

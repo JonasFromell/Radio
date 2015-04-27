@@ -36,6 +36,12 @@ export default Ember.Component.extend({
   valueObserver: Ember.observer('value', function () {
     var value = this.get('value');
 
+    // Set range track values
+    var fraction = (value - this.get('min')) / (this.get('max') - this.get('min'));
+
+    this.$('div.VolumeControl-track--lower')[0].style.flex = fraction;
+    this.$('div.VolumeControl-track--upper')[0].style.flex = 1 - fraction;
+
     // Change volume in audio service
     this.set('audio.volume', value);
   }),
