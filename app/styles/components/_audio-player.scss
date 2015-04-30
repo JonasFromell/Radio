@@ -1,7 +1,7 @@
 .AudioPlayer {
   @include flex-container($direction: horizontal, $align: center);
 
-  background-color: color($grey, 100);
+  background-color: color($grey, 300);
 
   @include E(controls) {
     @include flex-item($grow: 1);

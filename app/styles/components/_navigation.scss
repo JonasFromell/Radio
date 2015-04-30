@@ -1,0 +1,41 @@
+$separator-background: rgba(#000, 0.26);
+
+.Navigation {
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+
+  @include E(subheader) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+
+    @include subhead-1($contrast: true);
+  }
+
+  @include E(item) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+
+    @include menu($contrast: true);
+
+    & .Icon {
+      margin-right: 32px;
+
+      opacity: 0.54;
+    }
+  }
+
+  @include E(separator) {
+    display: block;
+    height: 1px;
+    margin: 8px 0;
+
+    background: $separator-background;
+  }
+
+}

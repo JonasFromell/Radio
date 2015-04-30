@@ -14,16 +14,19 @@
   "helpers/palette";
 
 // Set some initial configuration
-$theme: $blue;
+$theme: $grey;
 
 // Base
 @import
   "base/base",
-  "base/animation";
+  "base/animation",
+  "base/typography";
 
 // Components
 @import
   "components/button",
+  "components/navigation",
   "components/audio-player",
   "components/progress-activity",
-  "components/volume-control";
+  "components/volume-control",
+  "components/advertisement";

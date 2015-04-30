@@ -1,0 +1,188 @@
+$font: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+@mixin display-4 ($contrast: false) {
+  font-family: $font;
+  font-size: 112px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.04em;
+
+  @if ($contrast) {
+    opacity: 0.54;
+  }
+}
+
+@mixin display-3 ($contrast: false) {
+  font-family: $font;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  @if ($contrast) {
+    opacity: 0.54;
+  }
+}
+
+@mixin display-2 ($contrast: false) {
+  font-family: $font;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 48px;
+
+  @if ($contrast) {
+    opacity: 0.54;
+  }
+}
+
+@mixin display-1 ($contrast: false) {
+  font-family: $font;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+
+  @if ($contrast) {
+    opacity: 0.54;
+  }
+}
+
+@mixin headline ($contrast: false) {
+  font-family: $font;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin title ($contrast: false) {
+  font-family: $font;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin subhead-1 ($contrast: false) {
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin subhead-2 ($contrast: false) {
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin body-1 ($contrast: false) {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin body-1 ($contrast: false) {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin caption ($contrast: false) {
+  font-family: $font;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+
+  @if ($contrast) {
+    opacity: 0.54;
+  }
+}
+
+@mixin menu ($contrast: false) {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+@mixin button ($contrast: false) {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  @if ($contrast) {
+    opacity: 0.87;
+  }
+}
+
+/**
+ * Styles for HTML
+ */
+html, body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 { @include display-3(); }
+h2 { @include display-2(); }
+h3 { @include display-1(); }
+h4 { @include headline(); }
+h5 { @include title(); }
+h6 { @include subhead-1(); }
+
+p {
+  @include body-1();
+  margin: 0 0 16px 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}

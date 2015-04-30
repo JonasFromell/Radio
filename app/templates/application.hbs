@@ -1,10 +1,56 @@
 <header class="App-header">
-
+  <h3>Radio Hillstreet</h3>
 </header>
 
-<main class="App-content">
-  {{outlet}}
-</main>
+<div class="App-body">
+  <nav class="App-body-nav">
+    <ul class="Navigation">
+      <li class="Navigation-subheader">
+        Lyssna
+      </li>
+      <li class="Navigation-item">
+        <i class="Icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+          </svg>
+        </i>
+        <a href="#">Live</a>
+      </li>
+      <li class="Navigation-item">
+        <i class="Icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/>
+          </svg>
+        </i>
+        <a href="#">Arkiv</a>
+      </li>
+      <li class="Navigation-separator"></li>
+      <li class="Navigation-subheader">
+        Upptäck
+      </li>
+    </ul>
+  </nav>
+
+  <main class="App-body-content">
+    {{outlet}}
+  </main>
+
+  <aside class="App-body-advertisement">
+    <div class="Advertisement">
+
+    </div>
+
+    <div class="Advertisement">
+
+    </div>
+
+    <div class="Advertisement">
+
+    </div>
+  </aside>
+</div>
 
 <footer class="App-footer">
   {{audio-player}}

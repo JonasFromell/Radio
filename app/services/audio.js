@@ -93,7 +93,7 @@ export default Ember.Object.extend({
    *
    * @prop { Number }
    */
-  volume: 10,
+  volume: 0.1,
 
   /**
    * Observes changes to track and sets up the context to play it

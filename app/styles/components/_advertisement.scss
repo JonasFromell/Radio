@@ -1,0 +1,6 @@
+.Advertisement {
+  @include flex-item();
+  margin: 20px;
+
+  background: color($grey, 500);
+}
